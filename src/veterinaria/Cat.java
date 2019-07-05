@@ -12,7 +12,7 @@ package veterinaria;
 public class Cat extends Pet {
 
     private boolean isHunter;
-    public Cat(String id, String name, String hairColor, boolean b) {
+    public Cat(String id, String name, String hairColor,boolean b) {
         super(id, name, hairColor);
         isHunter=b;
     }

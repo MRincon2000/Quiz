@@ -5,6 +5,8 @@
  */
 package veterinaria;
 
+import java.util.Objects;
+
 /**
  *
  * @author Estudiante
@@ -20,6 +22,31 @@ public class Dog extends Pet {
     @Override
     public String sound() {
      return "guau";
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.breed);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Dog other = (Dog) obj;
+        if (!Objects.equals(this.breed, other.breed)) {
+            return false;
+        }
+        return true;
     }
 
 
